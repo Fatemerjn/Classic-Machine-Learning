@@ -1,40 +1,44 @@
 # Classic Machine Learning
 
-Repository of classic machine learning notebooks, datasets and assets. The project has been reorganized to a professional layout.
+Curated collection of classical machine learning case studies, datasets, and helper tooling. All course-oriented notebooks have been renamed and grouped by topic to make the repository feel like a reusable project instead of a homework dump.
 
-Repository layout
-- `notebooks/` — cleaned Jupyter notebooks, renamed for clarity (e.g. `Perceptron.ipynb`, `Linear_Regression.ipynb`).
-- `data/` — datasets used by notebooks (CSV / TXT files).
-- `assets/` — images and figures used in the notebooks.
-- `scripts/` — utility scripts (includes `reorganize.sh`).
+**Repository layout**
+- `notebooks/` — Jupyter notebooks organised by modelling theme.
+- `data/` — CSV/TXT datasets referenced by notebooks.
+- `assets/` — figures and supporting imagery.
+- `scripts/` — maintenance utilities such as `reorganize.sh`.
 
-Quick start
-1. Create and activate a Python environment (Python 3.9+ recommended).
+**Notebooks overview**
+- `notebooks/soft_margin_svm.ipynb` — soft-margin SVM exploration and visualisation.
+- `notebooks/adaboost_synthetic_classification.ipynb` — AdaBoost implemented from scratch on a synthetic dataset.
+- `notebooks/mushroom_decision_tree_analysis.ipynb` — decision tree baseline with missing-value handling on the Kaggle mushroom dataset.
+- `notebooks/spotify_clustering_pipeline.ipynb` — dimensionality reduction and song clustering for Spotify features.
+- `notebooks/Linear_Regression.ipynb`, `notebooks/Linear_Regression_Q2.ipynb`, `notebooks/Linear_Regression_Questions.ipynb` — linear regression notes, exercises, and question walkthroughs.
+- `notebooks/Logistic_Regression.ipynb` — logistic regression modelling and evaluation.
+- `notebooks/MLE_MAP.ipynb`, `notebooks/Maximum_Likelihood.ipynb` — maximum likelihood and MAP estimation derivations.
+- `notebooks/Neural_Network.ipynb`, `notebooks/Perceptron.ipynb`, `notebooks/Perceptron_Detailed.ipynb` — perceptron and neural network experiments.
 
-	python -m venv .venv
-	source .venv/bin/activate
+**Quick start**
+- Create and activate a Python environment (Python 3.9+ recommended):
+  ```
+  python -m venv .venv
+  source .venv/bin/activate
+  ```
+- Install the common scientific stack:
+  ```
+  pip install numpy pandas scikit-learn matplotlib seaborn jupyter
+  ```
+- Launch Jupyter Lab or Notebook and open the files under `notebooks/`:
+  ```
+  jupyter lab
+  ```
 
-2. Install essential packages (example):
+**Maintaining the structure**
+- Run `scripts/reorganize.sh` to re-apply the tidy folder layout when adding raw homework exports.
+- Datasets belong in `data/`, supporting media in `assets/`.
+- Avoid committing heavyweight data; prefer download scripts or documented links instead.
 
-	pip install numpy pandas scikit-learn matplotlib seaborn jupyter
-
-3. Launch Jupyter Lab or Notebook and open files from `notebooks/`:
-
-	jupyter lab
-
-Files of interest
-- `notebooks/Perceptron.ipynb` — perceptron implementation and experiments
-- `notebooks/Linear_Regression.ipynb` — linear regression exercises and Q&A
-- `notebooks/Logistic_Regression.ipynb` — logistic regression notebook
-- `notebooks/Neural_Network.ipynb` — simple neural network experiments
-- `data/` — datasets used by the notebooks
-
-Contributing / Notes
-- Original files and directories were renamed to remove homework identifiers and long personal IDs. If you want the original filenames preserved, the history is available in git.
-- If you add new notebooks, place them under `notebooks/` and add required datasets under `data/` (never commit large binary files to the repo).
-
-If you'd like, I can also:
-- Add a `requirements.txt` or `environment.yml` for reproducibility.
-- Add a small Python `src/` package for reusable code used across notebooks.
-- Convert heavy notebooks into scripts for unit testing.
-
+**Next steps (optional)**
+1. Generate a `requirements.txt` or `environment.yml` for fully reproducible environments.
+2. Extract reusable code into a lightweight `src/` package with unit tests.
+3. Add pre-commit hooks (formatters, linting) to keep notebooks and scripts consistent.
